@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CBCentralManagerDelegate {
+    
+    var centralManager : CBCentralManager? //setting up the bluetooth central manager
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.centralManager = CBCentralManager(delegate: self, queue: nil) //Setting up the manage
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func centralManagerDidUpdateState(central: CBCentralManager) {
+        if central.state == CBCentralManagerState.PoweredOn{
+            print("Everything is ok!")
+        } else {
+            print("Something wrong: \(central.state.rawValue)")
+        }
     }
-
 
 }
 
