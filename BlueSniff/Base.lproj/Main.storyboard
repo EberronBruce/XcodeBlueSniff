@@ -73,7 +73,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cKA-Zb-cfR" secondAttribute="bottom" id="T7q-MS-zZI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Blue Sniff" id="PEU-YG-IbY"/>
+                    <navigationItem key="navigationItem" title="Blue Sniff" id="PEU-YG-IbY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8a1-fV-L7v">
+                            <connections>
+                                <action selector="refreshTapped:" destination="BYZ-38-t0r" id="odt-q0-c2p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cKA-Zb-cfR" id="LMi-RR-9a2"/>
                     </connections>

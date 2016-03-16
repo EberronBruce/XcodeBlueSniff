@@ -14,6 +14,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, UITableViewDat
     var centralManager : CBCentralManager? //setting up the bluetooth central manager
     var peripherals = [CBPeripheral]()
     var RSSIs = [NSNumber]()
+    var timer : NSTimer?
 
     @IBOutlet weak var tableView: UITableView! //Connect storyboard tableview to code
     
@@ -46,19 +47,34 @@ class ViewController: UIViewController, CBCentralManagerDelegate, UITableViewDat
         cell.rssiLabel.text = "RSSI: \(RSSI)"
         return cell
     }
-
     
+    
+    @IBAction func refreshTapped(sender: AnyObject) {
+        self.peripherals = []
+        self.RSSIs = []
+        self.tableView.reloadData()
+        startScan()
+    }
+
+    //Start the scanning
     func startScan(){
+        self.timer?.invalidate()
         self.centralManager?.scanForPeripheralsWithServices(nil, options: nil)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(20, target: self, selector: "stopScan", userInfo: nil, repeats: false)
+    }
+    //Stop scanning
+    func stopScan() {
+        self.centralManager?.stopScan()
+        print("Stop Scan")
     }
     
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        print("***********************")
-        print("Name: \(peripheral.name)")
-        print("UUID: \(peripheral.identifier.UUIDString)")
-        print("Ad Data: \(advertisementData)")
-        print("RSSI: \(RSSI)")
-        print("***********************")
+//        print("***********************")
+//        print("Name: \(peripheral.name)")
+//        print("UUID: \(peripheral.identifier.UUIDString)")
+//        print("Ad Data: \(advertisementData)")
+//        print("RSSI: \(RSSI)")
+//        print("***********************")
         self.peripherals.append(peripheral)
         self.RSSIs.append(RSSI)
         self.tableView.reloadData()
