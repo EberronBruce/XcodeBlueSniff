@@ -12,6 +12,7 @@
 		7A3F83031C9877B200328BE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3F83011C9877B200328BE9 /* Main.storyboard */; };
 		7A3F83051C9877B200328BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A3F83041C9877B200328BE9 /* Assets.xcassets */; };
 		7A3F83081C9877B200328BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3F83061C9877B200328BE9 /* LaunchScreen.storyboard */; };
+		7A3F83101C993F0000328BE9 /* BlueToothTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F830F1C993F0000328BE9 /* BlueToothTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7A3F83041C9877B200328BE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A3F83071C9877B200328BE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A3F83091C9877B200328BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A3F830F1C993F0000328BE9 /* BlueToothTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueToothTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				7A3F82FD1C9877B200328BE9 /* AppDelegate.swift */,
 				7A3F82FF1C9877B200328BE9 /* ViewController.swift */,
+				7A3F830F1C993F0000328BE9 /* BlueToothTableViewCell.swift */,
 				7A3F83011C9877B200328BE9 /* Main.storyboard */,
 				7A3F83041C9877B200328BE9 /* Assets.xcassets */,
 				7A3F83061C9877B200328BE9 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3F83101C993F0000328BE9 /* BlueToothTableViewCell.swift in Sources */,
 				7A3F83001C9877B200328BE9 /* ViewController.swift in Sources */,
 				7A3F82FE1C9877B200328BE9 /* AppDelegate.swift in Sources */,
 			);
